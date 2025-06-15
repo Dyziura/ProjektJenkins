@@ -24,6 +24,12 @@ class HomeTest(BaseTest):
         sleep(2)
         print(f"Wprowadzono email: {email}")
 
+    def test_insert_password(self):
+        password = os.environ.get("TEST_PASSWORD")
+        self.driver.find_element(By.ID, "reg_password").send_keys(password)
+        sleep(2)
+        print(f"Wprowadzono haslo: {password}")
+
 if __name__ == "__main__":
     import unittest
     unittest.main()
